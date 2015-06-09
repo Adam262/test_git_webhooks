@@ -6,6 +6,7 @@ get '/hi' do
 end
 
 post '/payload' do
+  binding.pry
   request.body.rewind
   payload_body = request.body.read
   verify_signature(payload_body)
